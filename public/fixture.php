@@ -1,12 +1,12 @@
 <?php
 
-require_once "conexaoDB.php";
+ require_once("connection/conexaoDB.php");  
 
-echo "### executando Fixture ###\n";
+echo "### executando Fixture ###\n<br>";
 
 $conn = conexaoDB();
 
-echo "Removedo Tabela\n";
+echo "Removedo Tabela\n<br>";
 
 $conn->query("DROP TABLE IF EXISTS teste;");
 
@@ -15,7 +15,7 @@ $conn->query("DROP TABLE IF EXISTS paginas;");
 
 echo " - OK\n";
 
-echo "criando Tabela teste\n";
+echo "criando Tabela teste\n<br>";
 
 $conn->query("CREATE TABLE teste (
    id INT NOT NULL AUTO_INCREMENT,
@@ -25,7 +25,7 @@ $conn->query("CREATE TABLE teste (
 echo " - OK\n";
 
 
-echo "criando tabela pagina\n";
+echo "criando tabela pagina\n<br>";
 
 $conn->query("CREATE TABLE IF NOT EXISTS  paginas  (
    id_pagina  int(11) NOT NULL AUTO_INCREMENT,
@@ -35,7 +35,7 @@ $conn->query("CREATE TABLE IF NOT EXISTS  paginas  (
   
 echo " - OK\n";
 
-echo "Inserindo dados\n";
+echo "Inserindo dados\n<br>";
 
 
 
