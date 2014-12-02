@@ -13,7 +13,7 @@ $conn->query("DROP TABLE IF EXISTS teste;");
 $conn->query("DROP TABLE IF EXISTS paginas;");
 
 
-echo " - OK\n";
+echo " - OK\n<br>";
 
 echo "criando Tabela teste\n<br>";
 
@@ -22,7 +22,7 @@ $conn->query("CREATE TABLE teste (
    nome VARCHAR(45) CHARACTER SET 'utf8' NULL,
    PRIMARY KEY (id));");
    
-echo " - OK\n";
+echo " - OK\n<br>";
 
 
 echo "criando tabela pagina\n<br>";
@@ -33,7 +33,7 @@ $conn->query("CREATE TABLE IF NOT EXISTS  paginas  (
    texto  varchar(150)  CHARACTER SET 'utf8' NULL,
   PRIMARY KEY ( id_pagina ));");
   
-echo " - OK\n";
+echo " - OK\n<br>";
 
 echo "Inserindo dados\n<br>";
 
