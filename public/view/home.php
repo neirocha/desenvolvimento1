@@ -5,9 +5,9 @@
   
  $conn = conexaoDB();
  
-	$pg = 'home';
+	$pg = 'inicial';
 	
-   $sql = "select * from paginas where titulo = '$pg'";
+   $sql = "select * from paginas where texto LIKE '%$pg%'";
    $stmt = $conn->prepare($sql);
    $stmt ->execute();
     $res = $stmt->fetchAll(PDO::FETCH_ASSOC);

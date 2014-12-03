@@ -6,7 +6,7 @@
     $conn = conexaoDB();
  
 
-   $sql = "select * from paginas where titulo = '$pg'";
+   $sql = "select * from paginas where texto LIKE '%$pg%'";
    $stmt = $conn->prepare($sql);
    $stmt ->execute();
     $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -30,6 +30,7 @@
         <div class="row">
 <div class="span6">
     <form method="get">
+    <input type="hidden" name="pg" value="contato" />
     <table>
         <tr>
             <td valign="top">Nome</td><td><input type="text" name="nome"></td>

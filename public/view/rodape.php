@@ -1,3 +1,5 @@
+<html>
+<head>
 <style type="text/css">
 
     #rodape {
@@ -11,12 +13,18 @@
     }
 
 </style>
+<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+</head>
+<title></title>
+<body>
 <div id="rodape">
 <?php
 ini_set("display_errors", 0);
 
 $ano = date("Y");
 
-echo "Todos os direitos reservados - $ano";
+echo "<h6>Todos os direitos reservados - $ano</h6>";
 ?>
 </div>
+</body>
+</html>
