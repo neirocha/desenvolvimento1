@@ -41,7 +41,7 @@ echo "Inserindo dados\n<br>";
 
 $linha1 = array('Home', 'Empresa', 'Produtos', 'Servicos', 'Contato');
 
-$linha2 = array('Dados da pagina inicial', 'Navegue em nossa Empresa', 'Todos os nossos Produtos', 'Prestacao de Servicos', 'preencha o nosso formulario em nosso Contatos');
+$linha2 = array('Dados da pagina inicial', 'Navegue em nossa Empresa<br>-tudo isso esta vindo da base de dados.', 'Todos os nossos Produtos', 'Prestacao de Servicos', 'preencha o nosso formulario em nosso Contatos');
 for($x = 0; $x <= 4; $x++){
 
  
