@@ -6,16 +6,21 @@
  $conn = conexaoDB();
  
 	 
+	if($pg == ""){
 	
-   $sql = "select * from paginas where texto LIKE '%$pg%' LIMIT 1";
+	$pg = "inicial";
+	
+	}
+   $sql = "select * from paginas where texto LIKE '%$pg%'";
    $stmt = $conn->prepare($sql);
    $stmt ->execute();
     $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
     foreach($res  as $result){
 	
 	
-	echo "<hr><div style='font-family:Verdana, Arial, Helvetica, sans-serif; color:black; font-size:24px; padding-left:309px;'>".$result['titulo']."</div>";
-	echo "<br><li><div style='font-family:Verdana, Arial, Helvetica, sans-serif; color:#0000FF; font-size:24px; padding-left:309px;'>".$result['texto']."</div></li>";
+	echo "<hr><div id='titulo'>".$result['titulo']."</div>";
+
+	echo "<br><li><div id='texto'>".$result['texto']."</div></li>";
     }
 	
     ?>

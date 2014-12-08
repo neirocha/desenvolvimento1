@@ -8,6 +8,16 @@
  * Designed and built with all the love in the world by @mdo and @fat.
  */
 
+    #rodape {
+        width: 100%;
+        color: #000000;
+        text-align: center;
+        border: 1px solid;
+        position: absolute;
+        bottom: 0;
+        background-color: #808080;
+    }
+	
 .clearfix {
   *zoom: 1;
 }

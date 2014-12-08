@@ -14,9 +14,9 @@
 
     foreach($res  as $result){
 	
-	echo "<hr><div style='font-family:Verdana, Arial, Helvetica, sans-serif; color:#ff00FF; font-size:24px; padding-left:309px;'>".$result['titulo']."</div>";
+	echo "<hr><div id='titulo'>".$result['titulo']."</div>";
 
-	echo "<br><li><div style='font-family:Verdana, Arial, Helvetica, sans-serif; color:#0000FF; font-size:24px; padding-left:309px;'>".$result['texto']."</div></li>";
+	echo "<br><li><div id='texto'>".$result['texto']."</div></li>";
 
     }
 	
