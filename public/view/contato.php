@@ -35,16 +35,16 @@
     <input type="hidden" name="pg" value="contato" />
     <table>
         <tr>
-            <td valign="top">Nome</td><td><input type="text" name="nome"></td>
+            <td valign="top"><input type="text" name="nome" class="form-control" placeholder="Nome"></td>
         </tr>
         <tr>
-            <td valign="top">Email</td><td><input type="text" name="email" onblur="validacaoEmail(f1.email)"></td>
+            <td valign="top"><input type="text" name="email" class="form-control" placeholder="Email"></td>
         </tr>
         <tr>
-            <td valign="top">Assunto</td><td><input type="text" name="assunto"></td>
+            <td valign="top"><input type="text" name="assunto" class="form-control" placeholder="Assunto"></td>
         </tr>
         <tr>
-            <td valign="top">Mensagem</td><td><textarea cols="55" rows="5" name="mensagem"></textarea> </td>
+            <td valign="top"><textarea cols="55" rows="5" class="form-control"  placeholder="Mensagem" name="mensagem"></textarea> </td>
         </tr>
         <tr>
             <td colspan="2"><input type="submit" value="Cadastrar" name="cadastrar"> </td>
@@ -54,22 +54,12 @@
 </form>
 </div>
 
+
+
     <div class="span6">
     <?php
-if ((isset($_GET["cadastrar"]) == "cadastrar") and ($_GET["nome"] != "") and ($_GET["email"] != "") and ($_GET["assunto"] != "") and ($_GET["mensagem"] != "")){
-
-   echo "<script LANGUAGE=\"Javascript\">
-alert(\"Dados enviados com sucesso, abaixo seguem os dados que você enviou.\");
-</SCRIPT>" ;
-}elseif(isset($_GET["cadastrar"]) == "cadastrar"){
-    
-    echo "<script LANGUAGE=\"Javascript\">
-alert(\"Preencha os campos.\");
-</SCRIPT>" ;
- 
-}
-
-function isValidEmail($email)
+	
+	function isValidEmail($email)
 
 {
 
@@ -136,6 +126,21 @@ else
  echo "<h4>E-mail inválido.</h4>";
 exit;
 }
+
+
+if ((isset($_GET["cadastrar"]) == "cadastrar") and ($_GET["nome"] != "") and ($_GET["email"] != "") and ($_GET["assunto"] != "") and ($_GET["mensagem"] != "")){
+
+   echo "<script LANGUAGE=\"Javascript\">
+alert(\"Dados enviados com sucesso, abaixo seguem os dados que você enviou.\");
+</SCRIPT>" ;
+}elseif(isset($_GET["cadastrar"]) == "cadastrar"){
+    
+    echo "<script LANGUAGE=\"Javascript\">
+alert(\"Preencha os campos.\");
+</SCRIPT>" ;
+ 
+}
+
 
  
 

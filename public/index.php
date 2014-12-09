@@ -13,8 +13,7 @@ $pg = basename($rota['path']);
     <meta charset="utf-8">
     <title>Aula de PHP</title>
 
-    <link rel="stylesheet" type="text/css" href="css/stylos.css">
-    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 
 
 
@@ -26,11 +25,16 @@ $pg = basename($rota['path']);
  
 <?php require_once("view/menu.php"); ?>
 
-<div id="pagina">
+ 
     <?php require_once ("view/paginas.php"); ?>
-</div>
+ 
 
 <?php include ("view/rodape.php"); ?>
 
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="bootstrap/js/jquery-2.1.1.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.js"></script>
+    
 </body>
 </html>
