@@ -1,162 +1,34 @@
-<div class="container">
-    <?php
-	
-	ini_set('display_errors', true);
-    error_reporting(E_ALL | E_STRICT);
- require_once(__DIR__. "/../connection/conexaoDB.php");  
+<div id="geral">
+       <div id="topo">
+          <h1>Contatos</h1>
+       </div><!--topo-->
+       
+<?php
+ require_once "menu.php";
+?> 
+   <br />
+<br />
+<div id="cadastro">
+ <fieldset>
+    <legend>Formulario de contatos</legend>
+       <form action="#" method="get">
+       <input type="hidden" name="pg" value="contato" />
+            <label class="label"> Nome:<br /> <input type="text" name="nome"  placeholder="Nome"/></label>
+            <label class="label">Email:<br /> <input type="text" name="email" placeholder="Email" /></label>
+            <label class="label">Assunto:<br /> <input type="text" name="assunto"  placeholder="Assunto"/></label>
+            <label class="label">Mensagem:<br /> <textarea cols="55" rows="5"  name="mensagem" placeholder="Mensagem"></textarea></label>
+            <label class="label" id="center"><input type="submit" name="submit" value="Cadastrar"  class="btn btn-primary btn-xs"  name="cadastrar"></label>
+       </form>
+ </fieldset> 
+ </div>  
+ <?php if(isset($_GET['submit'])){?> 
+  <div id="return">
+  <b>Nome:</b> <?php echo $_GET['nome'] ?><br />
+  <b>Email:</b> <?php echo $_GET['email'] ?><br />
+  <b>Assunto:</b> <?php echo $_GET['assunto'] ?><br />
+  <b>Mensagem:</b> <?php echo $_GET['mensagem'] ?>
+  </div>
+<?php } ?>
 
-    $conn = conexaoDB();
- 
-
-   $sql = "select * from paginas where texto LIKE '%$pg%'";
-   $stmt = $conn->prepare($sql);
-   $stmt ->execute();
-    $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    foreach($res  as $result){
-	
-	echo "<hr><div id='titulo'>".$result['titulo']."</div>";
-
-	echo "<br><li><div id='texto'>".$result['texto']."</div></li>";
-
-    }
-    ?>
-</div>
-
-<hr>
-
-    <div class="container">
-
-
-
-        <div class="row">
-<div class="span6">
-    <form method="get" name="f1">
-    <input type="hidden" name="pg" value="contato" />
-    <table>
-        <tr>
-            <td valign="top"><input type="text" name="nome" class="form-control" placeholder="Nome"></td>
-        </tr>
-        <tr>
-            <td valign="top"><input type="text" name="email" class="form-control" placeholder="Email"></td>
-        </tr>
-        <tr>
-            <td valign="top"><input type="text" name="assunto" class="form-control" placeholder="Assunto"></td>
-        </tr>
-        <tr>
-            <td valign="top"><textarea cols="55" rows="5" class="form-control"  placeholder="Mensagem" name="mensagem"></textarea> </td>
-        </tr>
-        <tr>
-            <td colspan="2"><input type="submit" value="Cadastrar" name="cadastrar"> </td>
-        </tr>
-    </table>
-
-</form>
-</div>
-
-
-
-    <div class="span6">
-    <?php
-	
-	function isValidEmail($email)
-
-{
-
-//Verifica se o valor é válido
-
-//Caso falhe, não é necessário continuar
-
- 
-
-if(!filter_var($email, FILTER_VALIDATE_EMAIL))
-
-{
-
-return false;
-
-}
-
- 
-
-//Extrai o domínio
-
-list($user, $host) = explode("@", $email);
-
-//Verifica se o domínio esta acessível
-
-if (!checkdnsrr($host, "MX") && !checkdnsrr($host, "A"))
-
-{
-
-return false;
-
-}
-
- 
-
-return true;
-
-}
- 	
-if(isset($_GET["email"])){
-
-$email = $_GET["email"];
-
-}
-
-if(isset($email) == ""){
-
-$email = "jfcgfcg@com.com";
-
-}
- 
- 
- 
-if(isValidEmail($email))
-
-{
-
- //echo "Endereço correto.";
-}
-else
-
-{
-
- echo "<h4>E-mail inválido.</h4>";
-exit;
-}
-
-
-if ((isset($_GET["cadastrar"]) == "cadastrar") and ($_GET["nome"] != "") and ($_GET["email"] != "") and ($_GET["assunto"] != "") and ($_GET["mensagem"] != "")){
-
-   echo "<script LANGUAGE=\"Javascript\">
-alert(\"Dados enviados com sucesso, abaixo seguem os dados que você enviou.\");
-</SCRIPT>" ;
-}elseif(isset($_GET["cadastrar"]) == "cadastrar"){
-    
-    echo "<script LANGUAGE=\"Javascript\">
-alert(\"Preencha os campos.\");
-</SCRIPT>" ;
- 
-}
-
-
- 
-
-//Função de checagem
-
- 
-
-
-    if((isset($_GET["cadastrar"]) == "Cadastrar") and ($_GET["nome"] != "") and ($_GET["email"] != "") and ($_GET["assunto"] != "") and ($_GET["mensagem"] != ""))  {
-        echo "<h4>Nome = " . $_GET['nome'] . "<br></h4>";
-        echo "<h4>Email = " . $_GET['email'] . "<br></h4>";
-        echo "<h4>Assunto = " . $_GET['assunto'] . "<br></h4>";
-        echo "<h4>Mensagem = " . $_GET['mensagem'] . "</h4>";
-    }
-     ?>
-    </div>
-</div>
-</div>
-
+       
+       </div><!--geral-->

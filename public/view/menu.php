@@ -1,25 +1,14 @@
-﻿
-<ul class="nav nav-pills">
-  <li role="presentation"><a href="?pg=home">Home</a></li>
-  <li role="presentation"><a href="?pg=empresa">Empresa</a></li>
-  <li role="presentation"> <a href="?pg=produtos">Produtos</a></li>
-    <li role="presentation"> <a href="?pg=servicos">Serviços</a></li>
-  <li role="presentation"> <a href="?pg=contato">Contatos</a></li>
-</ul>
-<form action="" method="get">
-<div class="row">
-   
-  <div class="col-lg-6" align="right">
-    <div class="input-group">
-      <input type="text" name="pgs"   placeholder="Localizar" class="form-control" />
-       <span class="input-group-btn">
-        <button class="btn btn-default" type="submit">Go!</button>
+﻿<div id="menu-horizontal">
+       <ul>
+     <li><a href="?pg=home">Home</a></li>
+     <li><a href="?pg=empresa">Empresa</a></li>
+     <li><a href="?pg=produtos">Produtos</a></li>
+     <li><a href="?pg=servicos">Serviços</a></li>
+     <li><a href="?pg=contato">Contato</a></li>
+       </ul>
+       
+       <form action="#" method="get">
+ <label><input class="btn btn-primary btn-xs"  type="submit" value="Localizar:" />&nbsp;&nbsp;</label> <label> <input class="input" type="text" name="pg" />&nbsp;&nbsp;</label> 
+  </form>    
+ </div><!--menu-->
  
-      </span>
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
-</div><!-- /.row -->
-  
-</form> 
-
-  

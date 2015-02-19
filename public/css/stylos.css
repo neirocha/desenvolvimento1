@@ -1,11 +1,146 @@
-body{ margin-top:0px;
-      background-color:#FFCCFF}
+*{
+  padding:0;
+  margin:0;
+  list-style:none;
+
+  }
+ 
+ 
+
+
+#geral{
+      width:800px;
+	  margin:0 auto;
+	  border:0px solid black;
+	 	 }
+		 
+
+#topo{
+height:50px;
+background:#99CCFF;
+
+    }		 
+#menu-horizontal{
+background:orange;
+height:40px;
+ 
+
+}
+
+#menu-horizontal ul li a{
+display:block;
+float:left;
+background:orange;
+padding:10px 20px;
+text-decoration:none;
+border-right:1px solid black;
+
+
+
+}
+
+#menu-horizontal ul li a:hover{
+background:green;
+color:#fff;
+}		 
+   
+label{font:Verdana, Arial, Helvetica, sans-serif;
+      float:right;
+	  padding-top:05px;
+	  color:#0066FF;}
+	  
+.input{width:105px;
+ }	  
+
+    
+  		 
+#footer{
+width:800px;
+height:30px;
+line-height:30px;
+text-align:center;
+background: #ccc;
+clear:both;
+margin:0 auto;
+}	 
+fieldset{
+    width:448px;
+	border:1px solid black;
+	margin-bottom:15px;
+	}
 	
-ul{ font-family:Verdana, Arial, Helvetica, sans-serif;
-font-size:26px;}
+fieldset legend{
+    font: bold 14px Verdana, Arial, Helvetica, sans-serif;
+	color:#14077F;
+	 
+	}
 
-#pagina{font-family:Verdana, Arial, Helvetica, sans-serif;
-font-size:16px;}
+#topo h1{ margin-left:20px; padding-top:5px; border:0px solid black; }	
+	
+.label{
+ 	font: 12px Verdana, Arial, Helvetica, sans-serif;	
+	float:left;
+	width:220px;
+	margin:10px;
+	float:left;
+	 
+		}
+		
+ #center{text-align:center;} 
+ 
+ #img1{height:370px;
+    width:370px;
+	border:1px solid black;
+ 	float:left;
+	text-align:center;
+	margin:10px 10px 10px 10px ; }
+ 
+  #img2{height:370px;
+    width:370px;
+	border:1px solid black;
+ 	float:right;text-align:center; 
+	margin: 10px 10px 10px 10px ;}
+ 
+  #img3{height:370px;
+    width:370px;
+	border:1px solid black;
+ 	float:right;
+	text-align:center;
+	margin:10px 10px 10px  10px ;}
+ 
+  #img4{height:370px;
+    width:370px;
+	border:1px solid black;
+ 	float:left;
+	text-align:center;
+	margin:10px 10px 10px  10px ;}
+ 
+#abas{float:right;}
 
-.container{font-family:Verdana, Arial, Helvetica, sans-serif;
-font-size:36px;}	
+ #abas li{ 
+  
+ list-style:circle;
+ margin-right:20px;}
+ 
+  #abas li:hover{
+   color:#0000CC;
+   font: bold Verdana, Arial, Helvetica, sans-serif;
+   list-style:outside;
+  
+   
+ }
+ 
+
+ 
+ 
+ #cadastro{border:0px solid black;
+     float:left;}
+ 
+ 
+  #return{
+    border:0px solid black;
+    width:300px;
+	height:300px;
+	float:left;
+	text-align:left;
+	padding-top:58px;}
