@@ -31,7 +31,7 @@ echo "criando Tabela usurio\n<br>";
 $conn->query("CREATE TABLE usuario (
    id INT NOT NULL AUTO_INCREMENT,
    login VARCHAR(8) CHARACTER SET 'utf8' NULL,
-   senha VARCHAR(8) CHARACTER SET 'utf8' NULL,
+   senha VARCHAR(60) CHARACTER SET 'utf8' NULL,
    PRIMARY KEY (id));");
 
 echo " - OK\n<br>";
@@ -82,10 +82,12 @@ echo " - OK\n<br>";
 
 echo "Criando usuario\n<br>";
 
+$senha = password_hash("123", PASSWORD_DEFAULT);
+
 $smts = $conn->prepare("INSERT INTO usuario (login, senha) VALUES (:login, :senha);");
 
 $smts ->bindValue(":login","admin");
-$smts ->bindValue(":senha",123);
+$smts ->bindParam(":senha",$senha);
 $smts ->execute();
 
 
