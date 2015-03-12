@@ -1,9 +1,20 @@
-<div id="geral">
+<?php
+    session_start();
+    ?><div id="geral">
        <div id="topo">
-          <h1>Home Page</h1>
+          <h1>Home Page </h1>
+
        </div><!--topo-->
 <?php
  require_once "menu.php";
+ 
+  
+	
+if(isset($_GET["lougar"]) == "sim"){
+session_destroy();
+
+}
+ 
 ?>
    <br />
 <br />

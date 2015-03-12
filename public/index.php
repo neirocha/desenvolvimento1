@@ -80,6 +80,18 @@ if(isset($_GET['pg'])) {
 
             break;
 
+        case "ADM":
+
+            require_once "view/adm.php";
+
+            break;
+        case "adm":
+
+            require_once "view/adm.php";
+
+
+            break;
+
         default:
 
     }

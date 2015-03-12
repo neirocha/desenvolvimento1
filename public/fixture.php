@@ -12,6 +12,8 @@ $conn->query("DROP TABLE IF EXISTS teste;");
 
 $conn->query("DROP TABLE IF EXISTS paginas;");
 
+$conn->query("DROP TABLE IF EXISTS usuario;");
+
 
 echo " - OK\n <br>";
 
@@ -22,6 +24,16 @@ $conn->query("CREATE TABLE teste (
    nome VARCHAR(45) CHARACTER SET 'utf8' NULL,
    PRIMARY KEY (id));");
    
+echo " - OK\n<br>";
+
+echo "criando Tabela usurio\n<br>";
+
+$conn->query("CREATE TABLE usuario (
+   id INT NOT NULL AUTO_INCREMENT,
+   login VARCHAR(8) CHARACTER SET 'utf8' NULL,
+   senha VARCHAR(8) CHARACTER SET 'utf8' NULL,
+   PRIMARY KEY (id));");
+
 echo " - OK\n<br>";
 
 
@@ -39,10 +51,10 @@ echo "Inserindo dados\n<br>";
 
 
 
-$linha1 = array('Home', 'Empresa', 'Produtos', 'Servicos', 'Contato');
+$linha1 = array('Home', 'Empresa', 'Produtos', 'Servicos', 'Contato', 'ADM');
 
-$linha2 = array('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sem sapien, facilisis in nisl sit amet, finibus placerat sapien. In neque libero, venenatis id consectetur a, sollicitudin vitae tellus. Cras et fermentum nulla. Nunc viverra et neque et molestie. Fusce ut neque eros. Morbi vel consectetur urna, sit amet efficitur enim. In hac habitasse platea dictumst.', 'Vivamus dictum pellentesque tortor, sit amet ultrices est euismod ac. Pellentesque pharetra urna a dui hendrerit, in egestas ipsum viverra. Sed malesuada eu metus ac laoreet. Cras nec rutrum enim. Praesent placerat sem dui, at mollis massa venenatis non. Praesent quis egestas neque. Nullam vestibulum nisl lorem, dapibus mollis velit rhoncus quis. Nam mi tortor, iaculis vitae suscipit ac, ultrices eu tortor. Proin nisi sapien, faucibus molestie leo vitae, mollis pharetra nunc.', 'Todos os nossos Produtos', ' Cras tortor ipsum, dapibus quis est vitae, blandit dapibus arcu. Maecenas pellentesque, metus ut ultrices tristique, metus ex pretium massa, nec bibendum sapien sapien bibendum massa. Duis semper quam nec mauris egestas congue vel quis purus. Integer eleifend tempus scelerisque. Proin quis tortor ante. Mauris convallis mi id congue rhoncus. Mauris eu venenatis ipsum. Donec ante ligula, elementum vel purus ut, vehicula dapibus mi. Quisque gravida sed lacus vel cursus. Cras rhoncus libero ligula, vel mattis ex fringilla eget.', 'preencha o nosso formulario em nosso Contatos');
-for($x = 0; $x <= 4; $x++){
+$linha2 = array('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sem sapien, facilisis in nisl sit amet, finibus placerat sapien. In neque libero, venenatis id consectetur a, sollicitudin vitae tellus. Cras et fermentum nulla. Nunc viverra et neque et molestie. Fusce ut neque eros. Morbi vel consectetur urna, sit amet efficitur enim. In hac habitasse platea dictumst.', 'Vivamus dictum pellentesque tortor, sit amet ultrices est euismod ac. Pellentesque pharetra urna a dui hendrerit, in egestas ipsum viverra. Sed malesuada eu metus ac laoreet. Cras nec rutrum enim. Praesent placerat sem dui, at mollis massa venenatis non. Praesent quis egestas neque. Nullam vestibulum nisl lorem, dapibus mollis velit rhoncus quis. Nam mi tortor, iaculis vitae suscipit ac, ultrices eu tortor. Proin nisi sapien, faucibus molestie leo vitae, mollis pharetra nunc.', 'Todos os nossos Produtos', ' Cras tortor ipsum, dapibus quis est vitae, blandit dapibus arcu. Maecenas pellentesque, metus ut ultrices tristique, metus ex pretium massa, nec bibendum sapien sapien bibendum massa. Duis semper quam nec mauris egestas congue vel quis purus. Integer eleifend tempus scelerisque. Proin quis tortor ante. Mauris convallis mi id congue rhoncus. Mauris eu venenatis ipsum. Donec ante ligula, elementum vel purus ut, vehicula dapibus mi. Quisque gravida sed lacus vel cursus. Cras rhoncus libero ligula, vel mattis ex fringilla eget.', 'preencha o nosso formulario em nosso Contatos', 'area administrativa');
+for($x = 0; $x <= 5; $x++){
 
  
 
@@ -66,10 +78,18 @@ $texto = $linha2[$x];
 
 }
 
-echo " - OK\n";
+echo " - OK\n<br>";
 
-echo "### concluido ###\n";
+echo "Criando usuario\n<br>";
+
+$smts = $conn->prepare("INSERT INTO usuario (login, senha) VALUES (:login, :senha);");
+
+$smts ->bindValue(":login","admin");
+$smts ->bindValue(":senha",123);
+$smts ->execute();
 
 
+
+echo "### usuario criado com sucesso ###\n";
 
 ?>

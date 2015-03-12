@@ -68,9 +68,18 @@ case "contato":
 
 require_once "contato.php";
 
-
 break;
+    case "ADM":
 
+        require_once "adm.php";
+
+        break;
+    case "adm":
+
+        require_once "adm.php";
+
+
+        break;
 default:
 
 
